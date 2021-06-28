@@ -7,6 +7,13 @@ void ConverterToMb(int gb)
     int OneGB = 1024;//1gb=1024mb
     cout<<gb<<" GB = "<<OneGB*gb<<" Megabyte";
 }
+void ConvertINTO(int Fdata,int Per)
+{
+   int a = Fdata*1024;
+   float b = (float)a * Per/100;
+   float cal = a - b;
+   printf("Available Internet Data is: %.2f MB",cal);
+}
 void ForSimplecal()
 {
     int num1,num2,oper;
@@ -24,6 +31,7 @@ void ForSimplecal()
     cout<<"Press 5 For Modulas \n";
     cout<<"Enter Your Choice: "<<endl;
     cin>>oper;
+    system("cls");
     switch (oper)
     {
     case 1:cout<<num1<<" "<<"+"<<" "<<num2<<" = "<<num1+num2;
@@ -56,8 +64,10 @@ void ForScientificCal()
     cout<<"Press 9 For BaseLog \n";
     cout<<"Press 10 For SquareRoot \n";
     cout<<"Press 11 For Convert GB to MB\n";
-    cout<<"Enter Your Choice: "<<endl;
+    cout<<"Press 12 Check Available Internet Data\n";
+    cout<<"Enter Your Choice: ";
     cin>>oper1;
+    system("cls");
     switch (oper1)
     {
     case 1:cout<<"Enter First Number: ";
@@ -107,6 +117,13 @@ void ForScientificCal()
         cin>>gb;
         ConverterToMb(gb);
         break;
+    case 12:int Fdata,Rdata;
+            cout<<"Enter Full Data In GB: ";
+            cin>>Fdata;
+            cout<<"Enter Data Usage In Percentage: ";
+            cin>>Rdata;
+            ConvertINTO(Fdata,Rdata);
+        break;
     default: cout<<"Invalid Input";
         break;
     }
@@ -121,7 +138,9 @@ int main()
     cout<<"Press 1 For Simple Calculator: \n";
     cout<<"Press 2 For Scientific Calculator: \n";
     cout<<"Press 3 For Exit: \n";
+    cout<<"Enter Your Choice: ";
     cin>>opt;
+    system("cls");
      switch (opt)
      {
      case 1:ForSimplecal();
